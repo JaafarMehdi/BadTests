@@ -12,7 +12,9 @@ describe OvercomplicatedAssertions do
 
   context 'Update user'
     it 'work for name change' do
-      expect([user.first_name, user.last_name]).to eq(%w[Joe Doe])
+      expect(user.first_name).to eq('Joe')
+      expect(user.last_name).to eq('Doe')
+      # or in this case use Expect(user).to have_attributes(...)
     end
   end
 end

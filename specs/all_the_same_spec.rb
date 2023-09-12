@@ -15,9 +15,9 @@ describe AllTheSame do
   end
 
   context 'when we have the hard scenario nr2'
-    let(:params) {create :abstraction_of_complicated_params_interdependency_2 }
-    it 'will return what i want to know' do
-      expect(result).to eq  42
+    let(:params) {create :modified_abstraction_of_complicated_params_interdependency_2 }
+    it 'will return a different answer' do
+      expect(result).to eq  103
     end
   end
 end

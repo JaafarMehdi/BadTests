@@ -7,11 +7,12 @@ end
 describe SameValuesEverywhere do
   subject(:result) { described_class.(user: user) }
 
-  let(:user) {create :user, name: 'random string', adress: 'random string' }
+  let(:user) {create :user, name: 'Joe doe', adress: 'bialystok, poland' }
 
-  context 'false positive land'
+  context 'Meaningful test land'
     it 'return uppercase name' do
-      expect(result).to eq  'RANDOM STRING'
+      # TODO: fix the bug found with this test
+      expect(result).to eq  'JOE DOE'
     end
   end
 end

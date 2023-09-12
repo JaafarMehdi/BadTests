@@ -6,15 +6,21 @@ class TrikyCasesGenerator
 end
 
 describe BeHappyOrElse do
-  # Commented so my pr is green
-  # I needed a 10 lines test to pass autocheck
-  # subject(:result) { described_class.(magic_number) }
+  subject(:result) { described_class.(magic_number) }
 
-  # let(:magic_number) { 0 }
+  context 'with correct inpit'
+    let(:magic_number) { 7 }
+    
+    it 'just works' do
+      expect(result).to eq 1
+    end
+  end
 
-  # context 'I write a test cause i have to'
-  #   it 'why i cant get it to be green?' do
-  #     expect(result).to not_be_exception
-  #   end
-  # end
+  context 'with invalid tata'
+    let(:magic_number) { 0 }
+
+    it 'will raise exception' do
+      expect(result).to raise DivideByZeroErrorYouIdiot
+    end
+  end
 end
