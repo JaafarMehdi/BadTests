@@ -13,5 +13,3 @@ describe Ninja do
     end
   end
 end
-
-# remember the error is in the file_name

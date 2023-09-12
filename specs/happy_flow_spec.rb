@@ -19,4 +19,13 @@ describe BeHappyOrElse do
       expect(result).to eq  'Have a free coupon: some_mocked_coupon'
     end
   end
+
+  context 'called with unhappy user'
+    let(:my_precious_user) {create :user, is_happy: false }
+
+    it 'is a perfectly safe class' do
+      # TODO: fix the code to fix the error catched by this life saving test <3
+      expect(result).to eq  'Have a free coupon: some_mocked_coupon'
+    end
+  end
 end

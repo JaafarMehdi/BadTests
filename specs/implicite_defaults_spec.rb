@@ -8,7 +8,7 @@ end
 FactoryBot.define do
   factory :user do
     username { Faker::Name.masculine_name }
-    admin { false } # or even depend on database default instead
+    admin { false }
   end
 end
 
@@ -26,6 +26,8 @@ describe ImpliciteDefaults do
   end
 
   context 'When user is NOT admin'
+    let(:user) {create :user, admin: false }
+
     it 'raises error' do
       expect(result).to raise_error
     end

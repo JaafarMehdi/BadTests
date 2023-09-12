@@ -11,7 +11,8 @@ describe NonDeletingService do
 
   context 'called with vip user'
     it 'wont delete precious data' do
-      # I have the nagging feeling i'm forgetting something
+      # Todo: fix the error catched here
+      result
       expect(my_precious_user.vip_key).to eq  'not_deleted'
     end
   end
